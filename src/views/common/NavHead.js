@@ -28,17 +28,7 @@ export default class NavHead extends Component {
   }
 
   render () {
-    const userinfo = JSON.parse(sessionStorage.getItem('userinfo')) || {}
-    const roles = []
-    userinfo && userinfo.roles && userinfo.roles.map((item) => {
-      roles.push(item.roleName)
-    })
-    let name = ''
-    if (sessionStorage.getItem('userinfo')) {
-      name = JSON.parse(sessionStorage.getItem('userinfo')).userName
-    }
-
-    const { navHeadMenus } = this.props
+    const { activeMenu, navHeadMenus } = this.props
 
     return (
       <header id="nav_head" className="nav-head">
@@ -52,6 +42,7 @@ export default class NavHead extends Component {
             <nav className="nav-head-menus">
               {
                 navHeadMenus && navHeadMenus.map((item, index) => (<span
+                  className={activeMenu===item.key ? "active" : null}
                   key={index}
                   onClick={() => this.props.navHeadClick(item, index)}
                 >{item.name}</span>))

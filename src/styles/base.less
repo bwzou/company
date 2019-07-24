@@ -386,8 +386,8 @@ body {
       }
     }
 
-    .on {
-      background: #010104 ;
+    .active {
+      background-color: @blue;
     }
   }
 
@@ -408,9 +408,58 @@ body {
   top: @nav-head-height;
   height: 100%;
   width: @nav-side-width;
-  background-color: @nav-background
+  background-color: @navbar-background
 
 }
+
+.menu {
+  width: 100%;
+  z-index: 999;
+
+  .menu-item {
+    display: block;
+    color: @white;
+  }
+
+  .sub-menu {
+    font-size: @font-size-md;
+
+    .title {
+      padding: 18px 0 18px 24px;
+      color: #fff;
+
+      &:hover {
+        background-color: @nav-background;
+      }
+    }
+
+    .menu-item {
+      display: none;
+      padding: 12px 0 12px 40px;
+      background-color: @nav-item-background;
+
+      &:hover {
+        background-color: @hover-background;
+      }
+
+      &.active {
+        color: @blue;
+        //background-color: @hover-background;
+      }
+    }
+
+    &.active {
+      .title {
+        background-color: @nav-background;
+      }
+
+      .menu-item {
+        display: block;
+      }
+    }
+  }
+}
+
 
 .container {
   padding: @nav-head-height 0 0 @nav-side-width;

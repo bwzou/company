@@ -1,26 +1,36 @@
 import React from 'react'
-import { Switch, Route, BrowserRouter, Link } from 'react-router-dom'
+import { Switch, Route, IndexRoute, BrowserRouter, Link } from 'react-router-dom'
 import App from '../views/App'
 
 export default () => (
   <BrowserRouter>
-    <div>
-      <Route path="/" component={App}>
-        {/*<IndexRoute  />*/}
-        {/*<Route path="/desk/index" />*/}
-        {/*<Route path="/socketReceive" />*/}
-        {/*/!** *菜单 开始 *!/*/}
-        {/*<Route path="/echarts" />*/}
-        {/*<Route path="/editor" />*/}
-        {/*/!** *菜单 结束 *!/*/}
-        {/*/!** *系统设置 开始 *!/*/}
-        {/*<Route path={`/set/userManage`} />*/}
-        {/*<Route path={`/set/roleManage`} />*/}
-        {/*<Route path={`/set/moduleManage`} />*/}
-        {/*/!** *系统设置 结束 *!/*/}
-      </Route>
-      <Route path="/login" />
-      <Route path="*" />
-    </div>
+    <Route path="/" component={App} />
+
+    {/*/!* 部门管理 *!/*/}
+    {/*<Route path="/desk/index" component={base.example} />*/}
+    {/*<Route path="/socket/receive" component={base.receive} />*/}
+
+    {/*/!* 项目管理 *!/*/}
+    {/*<Route path="/echarts" component={base.example} />*/}
+    {/*<Route path="/editor" component={base.receive} />*/}
+
+    {/*/!* 权限管理 *!/*/}
+    {/*<Route path={`/set/userManage`} component={base.example} />*/}
+    {/*<Route path={`/set/roleManage`} component={base.receive} />*/}
+    {/*<Route path={`/set/moduleManage`} component={base.editor} />*/}
+
+    {/*/!* 文档管理 *!/*/}
+    {/*<Route path={`/set/userManage`} component={base.example} />*/}
+    {/*<Route path={`/set/roleManage`} component={base.receive} />*/}
+    {/*<Route path={`/set/moduleManage`} component={base.editor} />*/}
+
+    {/*/!* 论坛管理 *!/*/}
+    {/*<Route path={`/set/userManage`} component={base.example} />*/}
+    {/*<Route path={`/set/roleManage`} component={base.example} />*/}
+    {/*<Route path={`/set/moduleManage`} component={base.example} />*/}
+
+    {/* 其他 */}
+    <Route path="/login" />
+    <Route path="*" />
   </BrowserRouter>
 )
